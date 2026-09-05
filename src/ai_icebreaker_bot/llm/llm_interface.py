@@ -38,7 +38,8 @@ def create_llama_llm(
     """
     additional_params = {
         "top_k": settings.TOP_K,
-        "top_p": settings.TOP_P
+        "top_p": settings.TOP_P,
+        "options": {"num_ctx": 4096}
     }
 
     llama_llm = Ollama(
@@ -47,6 +48,7 @@ def create_llama_llm(
         temperature=temperature,
         num_predict=num_predict,
         request_timeout=120.0,
+        context_window=4096,
         additional_kwargs=additional_params
     )
     logger.info(f"Created Llama 3.2 LLM model: {settings.LLM_MODEL}")

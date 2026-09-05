@@ -29,7 +29,7 @@ def split_profile_data(profile_data: Dict[str, Any]) -> List:
         document = Document(text=json_string)
 
         # Split the document
-        splitter = SentenceSplitter(settings.CHUNK_SIZE)
+        splitter = SentenceSplitter(chunk_size=settings.CHUNK_SIZE)
 
         nodes = splitter.get_nodes_from_documents([document])
 
