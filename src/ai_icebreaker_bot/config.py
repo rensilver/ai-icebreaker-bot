@@ -6,7 +6,7 @@ class Settings:
     OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     LLM_MODEL: str = os.getenv("LLM_MODEL", "llama3.2:3b")
     EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
-    MOCK_DATA_URL: str = os.getenv("MOCK_DATA_URL", "./data/linkedin-profile-data.json")
+    MOCK_DATA_URL: str = os.getenv("MOCK_DATA_URL", "https://raw.githubusercontent.com/rensilver/datasets/69a11fcf8e5381f7c428f66abd58c98f80e8eb53/linkedin_profile_data.json")
     PROXYCURL_API_KEY: str = os.getenv("PROXYCURL_API_KEY", "")
     SIMILARITY_TOP_K: int = int(os.getenv("SIMILARITY_TOP_K", 5))
     TEMPERATURE: float = float(os.getenv("TEMPERATURE", 0.0))
