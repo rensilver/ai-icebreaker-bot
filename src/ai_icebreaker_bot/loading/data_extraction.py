@@ -5,7 +5,7 @@ import requests
 import logging
 from typing import Dict, Optional, Any
 
-from ai_icebreaker_bot.config import Settings
+from ai_icebreaker_bot.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +29,7 @@ def extract_linkedin_profile(
     try:
         if mock:
             logger.info("Using mock data from a premade JSON file...")
-            mock_url = Settings.MOCK_DATA_URL
+            mock_url = settings.MOCK_DATA_URL
             response = requests.get(mock_url, timeout=30)
         else:
             # Ensure API key is provided when mock is False
